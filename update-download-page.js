@@ -23,6 +23,7 @@ fs.readFile('download.handlebars', 'utf8', function (err, data) {
 
 shell.exec('aws s3 ls s3://download.dev.hyperionix.com', function (status, res) {
     var folders = res.split('\n');
+    console.log(folders);
     folders.forEach(function (folder) {
         if (folder !== 'index') {
             links.push({
