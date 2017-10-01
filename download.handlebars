@@ -1,0 +1,105 @@
+<!-- views/index/download.html -->
+<!-- <div ng-include="$ctrl.downloadPageUrl">Loading...</div> -->
+<div class="page">
+	<div class="row">
+		<div class="col-sm-10">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong>
+						<span class="fa fa-download"></span>&nbsp;
+						Download
+					</strong>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="thumbnail">
+								<img alt="" src="images/win.png">
+								<div class="caption">
+									<h3>Windows x64</h3>
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+									<p class="text-center">
+										<a
+											href="javascript:;"
+											class="btn btn-success"
+											role="button">
+											Download Latest Version
+										</a>
+									</p>
+									<p class="text-center">
+										<a
+											href="javascript:;"
+											class="btn btn-primary"
+											role="button">
+											Try Beta Version
+										</a>
+									</p>
+									<ul>
+                                        {{#each downloadLinks}}
+										<li>
+											<a href="{{link}}">{{text}}</a>
+										</li>
+                                        {{/each}}
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- Linux -->
+						<div class="col-sm-4" style="opacity: .4">
+							<div class="thumbnail">
+								<img alt="" src="images/linux.png">
+								<div class="caption">
+									<h3>Debian/Linux</h3>
+									<p>Work in progress.</p>
+									<p class="text-center">
+										<button
+											class="btn btn-success"
+											disabled
+											role="button">
+											Download Latest Version
+										</button>
+									</p>
+									<p class="text-center">
+										<button
+											class="btn btn-primary"
+											disabled
+											role="button">
+											Try Beta Version
+										</button>
+									</p>
+								</div>
+							</div>
+						</div>
+						<!-- MacOS -->
+						<div class="col-sm-4" style="opacity: .4">
+							<div class="thumbnail">
+								<img alt="" src="images/apple.png">
+								<div class="caption">
+									<h3>MacOS</h3>
+									<p>Work in progress</p>
+									<p class="text-center">
+										<button
+											class="btn btn-success"
+											disabled
+											role="button">
+											Download Latest Version
+										</button>
+									</p>
+									<p class="text-center">
+										<button
+											class="btn btn-primary"
+											disabled
+											role="button">
+											Try Beta Version
+										</button>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
