@@ -26,7 +26,7 @@ shell.exec('aws s3 ls s3://download.dev.hyperionix.com', function (status, res) 
     folders.forEach(function (folder) {
         if (folder !== 'index') {
             links.push({
-                link: DOWNLOAD_URL + folder,
+                link: DOWNLOAD_URL + folder.split(' ')[1],
                 text: folder
             });
         }
