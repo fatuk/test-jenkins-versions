@@ -5,7 +5,7 @@ var compiledTemplate;
 var downloadPage;
 var links = [];
 var DOWNLOAD_URL = 'http://download.dev.hyperionix.com/';
-var DIST = 'bin/win32/exe/ReleaseWIN32_x64/setup.exe';
+var DIST = '../../bin/win32/exe/ReleaseWIN32_x64/setup.exe';
 var UPLOAD_DIR = 'toUpload';
 
 if (!shell.which('aws')) {
