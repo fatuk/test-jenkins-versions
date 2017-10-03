@@ -6,6 +6,7 @@ var downloadPage;
 var links = [];
 var DOWNLOAD_URL = 'http://download.dev.hyperionix.com/';
 var DIST = '../../bin/win32/exe/ReleaseWIN32_x64/setup.exe';
+var version = env['version'];
 var UPLOAD_DIR = 'toUpload';
 
 if (!shell.which('aws')) {
@@ -15,8 +16,8 @@ if (!shell.which('aws')) {
 
 shell.mkdir(UPLOAD_DIR);
 shell.mkdir(UPLOAD_DIR + '/index');
-shell.mkdir(UPLOAD_DIR + '/${version}');
-shell.cp(DIST, UPLOAD_DIR + '/${version}');
+shell.mkdir(UPLOAD_DIR + '/' + version);
+shell.cp(DIST, UPLOAD_DIR + '/' + version);
 
 // Read template
 fs.readFile('download.handlebars', 'utf8', function (err, data) {
@@ -50,6 +51,6 @@ setTimeout(function () {
         }
     
         console.log('The file was saved!');
-        shell.exec('aws s3 sync ./build s3://download.dev.hyperionix.com --acl public-read')
+        shell.exec('aws s3 sync ' + UPLOAD_DIR + ' s3://download.dev.hyperionix.com --acl public-read')
     });
 }, 5000);
